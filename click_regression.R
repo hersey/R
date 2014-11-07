@@ -36,4 +36,10 @@ Zclick=as.data.frame(scale(click[,1:4]))
 fit=lm(sales~ad+reps+eff-1,Zclick) #-1 drops intercept
 summary(fit)
 
+#Partial sum of squre
+#It tells how much SSR would decrease if a variable is dropped from the model. 
+fit=lm(sales~ad+reps,data=click)
+drop1(fit)
+
+
 
