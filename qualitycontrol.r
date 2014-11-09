@@ -91,3 +91,19 @@ summary(fit2)
 # Residual standard error: 9.34 on 27 degrees of freedom
 # Multiple R-squared:  0.7845,  Adjusted R-squared:  0.7685 
 # F-statistic: 49.14 on 2 and 27 DF,  p-value: 1.004e-09
+
+
+#Since AM is a nominal variable, use dummy variable. 
+#Can use as.factor(x) to make x into factor.
+t.test(defect~am, quality, var.equal=T)
+#Note: We can reject the H0 and conclude there's a significant difference between am and pm defect rate.f
+# Two Sample t-test
+# 
+# data:  defect by am
+# t = -3.3547, df = 28, p-value = 0.002295
+# alternative hypothesis: true difference in means is not equal to 0
+# 95 percent confidence interval:
+#   -32.920676  -7.959324
+# sample estimates:
+#   mean in group 0 mean in group 1 
+# 16.92           37.36 
