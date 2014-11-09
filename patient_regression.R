@@ -5,14 +5,11 @@ patsat <- read.csv("~/GitHub/R/csv/patsat.csv")
 #into extra sum of squares associated with X2, with X1 given X2, and with X3 given X2 and X1
 #(Note: Anova tells which data to bring in first)
 
-fit=lm(y~x2+x1+x3,patsat)
+fit=lm(sat~x2+x1+x3,patsat)
 anova(fit)
-
-#Analysis of Variance Table
-# Response: sales
+# Response: sat
 # Df Sum Sq Mean Sq F value    Pr(>F)    
-# ad         1 463451  463451 227.198 < 2.2e-16 ***
-#   reps       1  59327   59327  29.084 4.167e-06 ***
-#   Residuals 37  75475    2040                      
-# ---
-#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# x2         1 4860.3  4860.3 48.0439 1.822e-08 *** (When bring x2, explain 4860 total variation in sat score)
+# x1         1 3896.0  3896.0 38.5126 2.008e-07 ***
+# x3         1  364.2   364.2  3.5997   0.06468 .  
+# Residuals 42 4248.8   101.2        
